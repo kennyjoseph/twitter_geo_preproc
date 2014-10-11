@@ -4,8 +4,7 @@ This is a forked version where I turned the barebones of the geocoding portions 
 
 Quoting from Brendan's description of the package:
 
-'''
-
+```
 A little Python geocoding library.  It can load a geojson database of
 geographic features, then query a (lon,lat) coordinate for what feature it is
 contained in.  It has been used successfully with library versions:
@@ -18,6 +17,5 @@ libspatialindex: spatialindex-src-1.7.1 (c/c++ dependency for rtree)
 
 Some sample geojson databases it has been used with are available at:
 http://brenocon.com/geocode/
-
-'''
+```
 
