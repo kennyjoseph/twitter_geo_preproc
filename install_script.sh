@@ -11,6 +11,7 @@ cd geos-3.4.2
 ./configure
 make
 sudo make install
+cd ..
 
 echo "GEOS INSTALLED"
 
@@ -21,8 +22,11 @@ cd spatialindex-src-1.8.4
 ./configure
 make
 sudo make install
+sudo /sbin/ldconfig
 
 echo "SPATIAL INDEX INSTALLED"
 
+pip install shapely
+pip install rtree
 ##
 sudo python setup.py install
