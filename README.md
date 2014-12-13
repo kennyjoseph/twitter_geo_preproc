@@ -24,7 +24,7 @@ http://brenocon.com/geocode/
 Sample usage
 ============
 
-First, run install_script.sh, which appears to work fine on at least Ubuntu 12.04
+First, run  ```install_script.sh ```, which appears to work fine on at least Ubuntu 12.04 and Mac OSX 10.9.5
 
 Then, run ```python setup.py install```
 
