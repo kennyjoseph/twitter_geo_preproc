@@ -1,2 +1,4 @@
 .idea/
 build/
+tweet_geocode/data/counties.tiger2010.json
+*.pyc

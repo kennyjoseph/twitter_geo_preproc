@@ -30,3 +30,9 @@ pip install shapely
 pip install rtree
 ##
 sudo python setup.py install
+
+wget http://brenocon.com/geocode/counties.tiger2010.json.gz
+gunzip counties.tiger2010.json.gz
+mv counties.tiger2010.json tweet_geocode/data/
+
+echo "DONE!"

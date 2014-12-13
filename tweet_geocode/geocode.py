@@ -21,12 +21,10 @@ def lookup(myjson, k):
   return myjson.get(k,"")
 
 def us_county():
-    print 'NO US DATA RIGHT NOW'
-    return None
-    #global _dbs
-    #if not _dbs.get('us_county'):
-    #    _dbs['us_county'] = geodb.GeoDB.load_geojson_files([resource_stream('geocode','data/')])
-    #return _dbs['us_county']
+    global _dbs
+    if not _dbs.get('us_county'):
+        _dbs['us_county'] = geodb.GeoDB.load_geojson_files([resource_filename('tweet_geocode','data/counties.tiger2010.json')])
+    return _dbs['us_county']
         
 def world_country():
     global _dbs
@@ -47,6 +45,7 @@ def geocode_us_county(geodict):
         geodict['us_county']['fp10'] = f['properties']['COUNTYFP10']
         geodict['us_county']['namelsad'] = f['properties']['NAMELSAD10']
         geodict['us_county']['geoid10']  = f['properties']['GEOID10']
+    return geodict
 
 def geocode_world_country(geodict):
     lon,lat = geodict['lonlat']
@@ -58,7 +57,7 @@ def geocode_world_country(geodict):
 def get_geo_record_for_tweet(tweet):
     geo = lookup(tweet, 'geo')
     if geo and geo['type'] == 'Point':
-        lat,lon    = geo['coordinates']
+        lat,lon  = geo['coordinates']
         loc_type = 'OFFICIAL'
     else:
         loc = lookup(tweet, 'user.location').strip()
