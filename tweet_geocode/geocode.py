@@ -53,6 +53,7 @@ def geocode_world_country(geodict):
     if f:
         geodict['country'] = f['properties']['ISO3']
         # geodict['country'] = {'iso3':f['properties']['ISO3']}
+    return geodict
 
 def get_geo_record_for_tweet(tweet):
     geo = lookup(tweet, 'geo')
