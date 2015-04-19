@@ -1,8 +1,5 @@
 #!/bin/sh
 
-
-
-
 ##install geos
 wget http://download.osgeo.org/geos/geos-3.4.2.tar.bz2
 bzip2 -dk geos-3.4.2.tar.bz2
@@ -21,6 +18,7 @@ tar -xzvf spatialindex-src-1.8.4.tar.gz
 cd spatialindex-src-1.8.4
 ./configure
 make
+sudo /sbin/ldconfig
 sudo make install
 sudo /sbin/ldconfig
 
